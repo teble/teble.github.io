@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <meta name="google-site-verification" content="7Maekqep-_Q_2Aw5TeLb6qdio3grOrE_MYagw4b4_bY" />
   <link rel="dns-prefetch" href="https://blog.teble.me">
-  <title>SpringBoot后端直接接收LocalDateTime参数最佳实践 | teble&#39;s notes</title>
+  <title>SpringBoot后端接收LocalDateTime参数最佳实践 | teble&#39;s notes</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="0x0. LocalDateTime在SpringBoot中的窘境问题由来：在前不久，我们后台就已经抛弃了Date这个类，而改用了java8提供的LocalDateTime，但是正常情况下LocalDateTime的构造函数是私有的，无法像Date那样直接被spring mvc直接处理，所以带给了我很多困扰，甚至有一次项目急迫致使我直接使用String去对时间进行接收，然后再通过DateTimeF">
 <meta name="keywords" content="SpringBoot,Java,后端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot后端直接接收LocalDateTime参数最佳实践">
+<meta property="og:title" content="SpringBoot后端接收LocalDateTime参数最佳实践">
 <meta property="og:url" content="https:&#x2F;&#x2F;blog.teble.me&#x2F;2019&#x2F;11&#x2F;05&#x2F;SpringBoot-LocalDateTime-%E5%90%8E%E7%AB%AF%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5&#x2F;index.html">
 <meta property="og:site_name" content="teble&#39;s notes">
 <meta property="og:description" content="0x0. LocalDateTime在SpringBoot中的窘境问题由来：在前不久，我们后台就已经抛弃了Date这个类，而改用了java8提供的LocalDateTime，但是正常情况下LocalDateTime的构造函数是私有的，无法像Date那样直接被spring mvc直接处理，所以带给了我很多困扰，甚至有一次项目急迫致使我直接使用String去对时间进行接收，然后再通过DateTimeF">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;ae01.alicdn.com&#x2F;kf&#x2F;Hfbf7b43a25aa445ab1fccf243d49241bh.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;ae01.alicdn.com&#x2F;kf&#x2F;Hbed78744be2e49c191d8d2d243d55791s.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;ae01.alicdn.com&#x2F;kf&#x2F;H9dadf5167f2c4916b892b073f713c112B.png">
-<meta property="og:updated_time" content="2019-11-05T07:52:32.923Z">
+<meta property="og:updated_time" content="2019-11-05T08:11:18.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;ae01.alicdn.com&#x2F;kf&#x2F;H41b34ac5e5b948be9c5c318d008dec74R.png">
   
@@ -193,7 +193,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      SpringBoot后端直接接收LocalDateTime参数最佳实践
+      SpringBoot后端接收LocalDateTime参数最佳实践
     </h1>
   
 
@@ -303,6 +303,23 @@
 
     
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          teble
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://blog.teble.me/2019/11/05/SpringBoot-LocalDateTime-后端接收参数最佳实践/" title="SpringBoot后端接收LocalDateTime参数最佳实践" target="_blank">https://blog.teble.me/2019/11/05/SpringBoot-LocalDateTime-后端接收参数最佳实践/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
     
 
   </div>
@@ -460,7 +477,7 @@
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "SpringBoot后端直接接收LocalDateTime参数最佳实践" -->
+    <!-- id: "SpringBoot后端接收LocalDateTime参数最佳实践" -->
     var gitment = new Gitment({
       id: "20191105124510",
       owner: 'teble',
