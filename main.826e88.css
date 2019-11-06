@@ -2556,7 +2556,7 @@ pre .css~* .id,pre .id {
 	min-width: 200px;
 	width: auto;
 	font-size: 14px;
-	text-shadow: 1px 1px 1px #398199;
+	/* text-shadow: 1px 1px 1px #398199; */
 	bottom: -10px;
 	transform-origin: 100% 100%;
 	transform: translate3d(0,-10px,0) rotate3d(1,1,1,-30deg)
@@ -2616,7 +2616,7 @@ pre .css~* .id,pre .id {
 
 .tooltip-left .tooltip-content {
 	position: absolute;
-	background: rgba(36,193,246,.9);
+	background: rgba(36,193,246,1);
 	z-index: 9999;
 	width: 200px;
 	bottom: 50%;
