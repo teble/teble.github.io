@@ -27,9 +27,9 @@ jobs:
           npm run build && \
           cd public && \
           git config --global --add safe.directory "*" && \
+          git init -b master && \
           git config user.name ${{ github.actor }} && \
           git config user.email ${{ github.actor }}@users.noreply.github.com && \
-          git init -b master && \
           git add . && \
           git commit -m "Deploy to GitHub Pages" && \
           git push --force "https://username:${ACCESS_TOKEN}@${TARGET_REPO}.git" master:${TARGET_BRANCH}
