@@ -39,4 +39,4 @@ jobs:
           popd && \
           git add db.json && \
           git commit -m "Update db.json" && \
-          git push "https://username:${ACCESS_TOKEN}@github.com/${TARGET_REPO}.git" origin
+          git push "https://username:${ACCESS_TOKEN}@github.com/${TARGET_REPO}.git" master:${{ github.ref }}
