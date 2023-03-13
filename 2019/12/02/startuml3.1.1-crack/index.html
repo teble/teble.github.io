@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/teble/teble.github.io@blog-images/img/202112031459049.png">
+  
+  <title>记录一次startUML破解 | teble&#39;s notes</title>
+  <meta name="author" content="teble" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="StartUML, 破解" />
+  
+  <meta name="description" content="前言之前startUML还在3.1.0的时候其实已经破解过一次了，网上的破解教程其实也有很多。讲道理现在startUML的颜值还是很高的。startUML目前的版本都是通过electron打包生成的软件，纯前端开发的东西，并且代码清晰，该有注释有注释，业务逻辑一点混淆都没做，搞得我破解的怪不好意思的。我没有搞事情！但是因为最近StartUML 3.1.1版本发布，发现退出时会强制弹出更新，怪难受的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一次startUML破解">
+<meta property="og:url" content="https://blog.teble.me/2019/12/02/startuml3.1.1-crack/index.html">
+<meta property="og:site_name" content="teble&#39;s notes">
+<meta property="og:description" content="前言之前startUML还在3.1.0的时候其实已经破解过一次了，网上的破解教程其实也有很多。讲道理现在startUML的颜值还是很高的。startUML目前的版本都是通过electron打包生成的软件，纯前端开发的东西，并且代码清晰，该有注释有注释，业务逻辑一点混淆都没做，搞得我破解的怪不好意思的。我没有搞事情！但是因为最近StartUML 3.1.1版本发布，发现退出时会强制弹出更新，怪难受的">
+<meta property="og:locale">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/teble/teble.github.io@blog-images/img/202112031459049.png">
+<meta property="article:published_time" content="2019-12-02T07:28:51.000Z">
+<meta property="article:modified_time" content="2022-09-06T02:47:44.508Z">
+<meta property="article:author" content="teble">
+<meta property="article:tag" content="StartUML">
+<meta property="article:tag" content="破解">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/teble/teble.github.io@blog-images/img/202112031459049.png">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+    
+  </style>
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                    
+                                        
+                                            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                        
+                                    
+                                        
+                                            <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                        
+                                    
+                                        
+                                            <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                        
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">teble&#39;s notes</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>teble&#39;s notes</h2> <br />
+                        <span>只会摸鱼</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://blog.teble.me/2019/12/02/startuml3.1.1-crack/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">记录一次startUML破解</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2019-12-02T07:28:51.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2019-12-02</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">teble</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~7.94K
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1662432464508"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+                <div class="kratos-post-inner-toc toc-div-class" >
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%B4%E8%A7%A3%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.</span> <span class="toc-text">破解步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x0-%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C"><span class="toc-number">2.1.</span> <span class="toc-text">0x0.前置工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x1-%E7%A0%B4%E8%A7%A3license%E6%A0%A1%E9%AA%8C"><span class="toc-number">2.2.</span> <span class="toc-text">0x1.破解license校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x2-%E5%8E%BB%E9%99%A4%E5%90%AF%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%A3%80%E6%B5%8B"><span class="toc-number">2.3.</span> <span class="toc-text">0x2.去除启动更新检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x3-%E7%A0%B4%E8%A7%A3%E5%AE%8C%E6%88%90"><span class="toc-number">2.4.</span> <span class="toc-text">0x3.破解完成</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">3.</span> <span class="toc-text">结语</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <div itemprop="articleBody"><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前startUML还在3.1.0的时候其实已经破解过一次了，网上的破解教程其实也有很多。讲道理现在startUML的颜值还是很高的。startUML目前的版本都是通过electron打包生成的软件，纯前端开发的东西，并且代码清晰，该有注释有注释，业务逻辑一点混淆都没做，搞得我破解的怪不好意思的。我没有搞事情！<img src="https://i.loli.net/2019/12/02/VeT3DX9QKjMd1rN.jpg">但是因为最近StartUML 3.1.1版本发布，发现退出时会强制弹出更新，怪难受的，上次没注意选了是，结果瞬间给我装完了。更加增加了我去除更新的决心。</p>
+<span id="more"></span>
+
+<h1 id="破解步骤"><a href="#破解步骤" class="headerlink" title="破解步骤"></a>破解步骤</h1><h2 id="0x0-前置工作"><a href="#0x0-前置工作" class="headerlink" title="0x0.前置工作"></a>0x0.前置工作</h2><p>1.首先电脑应该安装node环境，这我就不介绍了，各位自行下载。<br>2.安装asar包，为后面的解压app.asar做准备<code>npm install asar -g</code>，<code>-g</code>参数是全局安装，node的工作机制我也不介绍了（嘘，其实是我不懂，就是一个弱鸡前端）。<br>3.找到startUML安装目录，找到resources文件夹，里面的app.asar就是我们的目标了。<br>4.打开命令行使用<code>npm extract app.asar app</code>将app.asar的文件解压到app文件夹。</p>
+<h2 id="0x1-破解license校验"><a href="#0x1-破解license校验" class="headerlink" title="0x1.破解license校验"></a>0x1.破解license校验</h2><p>license校验的文件就在<code>app/src/engine/license-manager.js</code>中，打开文件我们可以看到这样一段代码:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Check license validity</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">Promise</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">validate () &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// Local check</span></span><br><span class="line">      <span class="keyword">var</span> file = <span class="variable language_">this</span>.<span class="title function_">findLicense</span>()</span><br><span class="line">      <span class="keyword">if</span> (!file) &#123;</span><br><span class="line">        <span class="title function_">reject</span>(<span class="string">&#x27;License key not found&#x27;</span>)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> data = fs.<span class="title function_">readFileSync</span>(file, <span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">        licenseInfo = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(data)</span><br><span class="line">        <span class="keyword">var</span> base = <span class="variable constant_">SK</span> + licenseInfo.<span class="property">name</span> +</span><br><span class="line">          <span class="variable constant_">SK</span> + licenseInfo.<span class="property">product</span> + <span class="string">&#x27;-&#x27;</span> + licenseInfo.<span class="property">licenseType</span> +</span><br><span class="line">          <span class="variable constant_">SK</span> + licenseInfo.<span class="property">quantity</span> +</span><br><span class="line">          <span class="variable constant_">SK</span> + licenseInfo.<span class="property">timestamp</span> + <span class="variable constant_">SK</span></span><br><span class="line">        <span class="keyword">var</span> _key = crypto.<span class="title function_">createHash</span>(<span class="string">&#x27;sha1&#x27;</span>).<span class="title function_">update</span>(base).<span class="title function_">digest</span>(<span class="string">&#x27;hex&#x27;</span>).<span class="title function_">toUpperCase</span>()</span><br><span class="line">        <span class="keyword">if</span> (_key !== licenseInfo.<span class="property">licenseKey</span>) &#123;</span><br><span class="line">          <span class="title function_">reject</span>(<span class="string">&#x27;Invalid license key&#x27;</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">// Server check</span></span><br><span class="line">          $.<span class="title function_">post</span>(app.<span class="property">config</span>.<span class="property">validation_url</span>, &#123;<span class="attr">licenseKey</span>: licenseInfo.<span class="property">licenseKey</span>&#125;)</span><br><span class="line">            .<span class="title function_">done</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">              <span class="title function_">resolve</span>(data)</span><br><span class="line">            &#125;)</span><br><span class="line">            .<span class="title function_">fail</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">if</span> (err &amp;&amp; err.<span class="property">status</span> === <span class="number">499</span>) &#123; <span class="comment">/* License key not exists */</span></span><br><span class="line">                <span class="title function_">reject</span>(err)</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// If server is not available, assume that license key is valid</span></span><br><span class="line">                <span class="title function_">resolve</span>(licenseInfo)</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">      <span class="title function_">reject</span>(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">checkLicenseValidity () &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">validate</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">setStatus</span>(<span class="variable language_">this</span>, <span class="literal">true</span>)</span><br><span class="line">  &#125;, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">setStatus</span>(<span class="variable language_">this</span>, <span class="literal">false</span>)</span><br><span class="line">    <span class="title class_">UnregisteredDialog</span>.<span class="title function_">showDialog</span>()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>很显然这就是我们本次的目标惹！但是网上几乎全部的破解的步骤都是只改了2行代码:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">checkLicenseValidity () &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">validate</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">setStatus</span>(<span class="variable language_">this</span>, <span class="literal">true</span>)</span><br><span class="line">  &#125;, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 去除失败部分的逻辑</span></span><br><span class="line">    <span class="comment">// setStatus(this, false)</span></span><br><span class="line">    <span class="comment">// UnregisteredDialog.showDialog()</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 强行将失败部分逻辑的状态设置成与success部分一致</span></span><br><span class="line">    <span class="title function_">setStatus</span>(<span class="variable language_">this</span>, <span class="literal">true</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>虽然这样确实so easy的就将startUML的license校验给干掉了，但是主动输入密钥的话还是会提示秘钥无效，破解的一点都不完整，这才不是我想要的破解！<img src="https://i.loli.net/2019/12/02/OsFe1HX45vhkY9t.jpg">（PS：小声逼逼，真的没见过比这个更容易的破解了）</p>
+<p>我们现在分析一下其余部分的代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">validate () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// Local check</span></span><br><span class="line">        <span class="comment">// 注释写着本地判断，如果license文件不存在则直接返回license无效的异常，否则则进入下一段逻辑</span></span><br><span class="line">        <span class="keyword">var</span> file = <span class="variable language_">this</span>.<span class="title function_">findLicense</span>()</span><br><span class="line">        <span class="keyword">if</span> (!file) &#123;</span><br><span class="line">          <span class="title function_">reject</span>(<span class="string">&#x27;License key not found&#x27;</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">// 读取license文件</span></span><br><span class="line">          <span class="keyword">var</span> data = fs.<span class="title function_">readFileSync</span>(file, <span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">          licenseInfo = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(data)</span><br><span class="line">          <span class="comment">// 将信息拼接字符串</span></span><br><span class="line">          <span class="keyword">var</span> base = <span class="variable constant_">SK</span> + licenseInfo.<span class="property">name</span> +</span><br><span class="line">            <span class="variable constant_">SK</span> + licenseInfo.<span class="property">product</span> + <span class="string">&#x27;-&#x27;</span> + licenseInfo.<span class="property">licenseType</span> +</span><br><span class="line">            <span class="variable constant_">SK</span> + licenseInfo.<span class="property">quantity</span> +</span><br><span class="line">            <span class="variable constant_">SK</span> + licenseInfo.<span class="property">timestamp</span> + <span class="variable constant_">SK</span></span><br><span class="line">          <span class="comment">// 字符串哈希并且转换大写</span></span><br><span class="line">          <span class="keyword">var</span> _key = crypto.<span class="title function_">createHash</span>(<span class="string">&#x27;sha1&#x27;</span>).<span class="title function_">update</span>(base).<span class="title function_">digest</span>(<span class="string">&#x27;hex&#x27;</span>).<span class="title function_">toUpperCase</span>()</span><br><span class="line">          <span class="comment">// 如果本地校验失败则不通过，否则进入服务器请求逻辑</span></span><br><span class="line">          <span class="keyword">if</span> (_key !== licenseInfo.<span class="property">licenseKey</span>) &#123;</span><br><span class="line">            <span class="title function_">reject</span>(<span class="string">&#x27;Invalid license key&#x27;</span>)</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// Server check</span></span><br><span class="line">            <span class="comment">// 服务器判断</span></span><br><span class="line">            $.<span class="title function_">post</span>(app.<span class="property">config</span>.<span class="property">validation_url</span>, &#123;<span class="attr">licenseKey</span>: licenseInfo.<span class="property">licenseKey</span>&#125;)</span><br><span class="line">              .<span class="title function_">done</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="title function_">resolve</span>(data)</span><br><span class="line">              &#125;)</span><br><span class="line">              .<span class="title function_">fail</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="comment">// 注释说的很清楚了，如果status === 499则代表license无效</span></span><br><span class="line">                <span class="keyword">if</span> (err &amp;&amp; err.<span class="property">status</span> === <span class="number">499</span>) &#123; <span class="comment">/* License key not exists */</span></span><br><span class="line">                  <span class="title function_">reject</span>(err)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                  <span class="comment">// If server is not available, assume that license key is valid</span></span><br><span class="line">                  <span class="comment">// 如果没有返回异常并且返回值 status !== 499，则通过校验</span></span><br><span class="line">                  <span class="title function_">resolve</span>(licenseInfo)</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        <span class="title function_">reject</span>(err)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>仔细分析一下代码，我们可以得知到了所有的判断逻辑，那么我们只需要将服务器相关的逻辑干掉即可，只保留读取文件以及回调的逻辑：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">validate () &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// Local check</span></span><br><span class="line">      <span class="keyword">var</span> file = <span class="variable language_">this</span>.<span class="title function_">findLicense</span>()</span><br><span class="line">      <span class="keyword">if</span> (!file) &#123;</span><br><span class="line">        <span class="title function_">reject</span>(<span class="string">&#x27;License key not found&#x27;</span>)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> data = fs.<span class="title function_">readFileSync</span>(file, <span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">        licenseInfo = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(data)</span><br><span class="line">        <span class="title function_">resolve</span>(licenseInfo)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">      <span class="title function_">reject</span>(err)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后再将licenseKey注册部分逻辑解决即可，这是原逻辑：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Check the license key in server and store it as license.key file in local</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">licenseKey</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">register (licenseKey) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    $.<span class="title function_">post</span>(app.<span class="property">config</span>.<span class="property">validation_url</span>, &#123;<span class="attr">licenseKey</span>: licenseKey&#125;)</span><br><span class="line">      .<span class="title function_">done</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> file = path.<span class="title function_">join</span>(app.<span class="title function_">getUserPath</span>(), <span class="string">&#x27;/license.key&#x27;</span>)</span><br><span class="line">        fs.<span class="title function_">writeFileSync</span>(file, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data, <span class="number">2</span>))</span><br><span class="line">        licenseInfo = data</span><br><span class="line">        <span class="title function_">setStatus</span>(<span class="variable language_">this</span>, <span class="literal">true</span>)</span><br><span class="line">        <span class="title function_">resolve</span>(data)</span><br><span class="line">      &#125;)</span><br><span class="line">      .<span class="title function_">fail</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">setStatus</span>(<span class="variable language_">this</span>, <span class="literal">false</span>)</span><br><span class="line">        <span class="keyword">if</span> (err.<span class="property">status</span> === <span class="number">499</span>) &#123; <span class="comment">/* License key not exists */</span></span><br><span class="line">          <span class="title function_">reject</span>(<span class="string">&#x27;invalid&#x27;</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="title function_">reject</span>()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这部分逻辑就是注册license的逻辑了，逻辑理解没有任何难度，是不是还记得上面有一段哈希的操作我们照着键值原样仿制一个license的json对象即可：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">register (licenseKey) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> data = &#123;</span><br><span class="line">          <span class="attr">name</span>: <span class="string">&quot;Teble&quot;</span>,</span><br><span class="line">          <span class="attr">product</span>: <span class="string">&quot;Teble product&quot;</span>,</span><br><span class="line">          <span class="attr">licenseType</span>: <span class="string">&quot;PS&quot;</span>,</span><br><span class="line">          <span class="attr">quantity</span>: <span class="string">&quot;Teble Quantity&quot;</span>,</span><br><span class="line">          <span class="attr">timestamp</span>: <span class="string">&quot;1575275098&quot;</span>,</span><br><span class="line">          <span class="attr">licenseKey</span>: <span class="string">&quot;It&#x27;s Cracked!!&quot;</span>,</span><br><span class="line">          <span class="attr">crackedAuthor</span>: <span class="string">&quot;Teble&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> file = path.<span class="title function_">join</span>(app.<span class="title function_">getUserPath</span>(), <span class="string">&#x27;/license.key&#x27;</span>)</span><br><span class="line">      fs.<span class="title function_">writeFileSync</span>(file, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data, <span class="number">2</span>))</span><br><span class="line">      licenseInfo = data</span><br><span class="line">      <span class="title function_">setStatus</span>(<span class="variable language_">this</span>, <span class="literal">true</span>)</span><br><span class="line">      <span class="title function_">resolve</span>(data)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>破解到这里可以基本告一段落了，软件是能使用了，但是更新的问题还没解决呢，如果startUML检测到版本有更新，或者手动误操作点击了更新，依旧是会进行后台下载不需要经过你二次同意的。</p>
+<h2 id="0x2-去除启动更新检测"><a href="#0x2-去除启动更新检测" class="headerlink" title="0x2.去除启动更新检测"></a>0x2.去除启动更新检测</h2><p>这部分逻辑比我想象中的难找了一点，我还纳闷了一会，他到底是怎么做到关闭软件时再弹出安装操作的，然后经历了几次卸载，观察发现，当软件开启时就会检测是否有更新，如果有则立马开启后台下载，网速嗖嗖嗖的飚，路径下载到了<code>AppData\Roaming\StarUML</code>这个路径下，下载完成后，如果关闭软件，则会立马触发安装操作。</p>
+<p>这部分逻辑在<code>app/src/main-process/application.js</code>文件下注释一句：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Application</span> <span class="keyword">extends</span> <span class="title class_ inherited__">EventEmitter</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span> () &#123;</span><br><span class="line">    <span class="variable language_">super</span>()</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">loadExtensions</span>()</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">handleCommands</span>()</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">handleMessages</span>()</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">handleEvents</span>()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check for updates on start</span></span><br><span class="line">    <span class="comment">// 启动时判断更新，注释就完事了</span></span><br><span class="line">    <span class="comment">//autoUpdater.checkForUpdatesAndNotify()</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此外engin目录下还有一个<code>update-manager.js</code>，注释后，手动检测更新依旧返回已经是最新版无需更新的字样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Update Manager</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UpdateManager</span> <span class="keyword">extends</span> <span class="title class_ inherited__">EventEmitter</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span> () &#123;</span><br><span class="line">    <span class="variable language_">super</span>()</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = <span class="string">&#x27;no-update&#x27;</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">updateInfo</span> = <span class="literal">null</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">progress</span> = <span class="literal">null</span></span><br><span class="line">    <span class="comment">// 注释这一句屏蔽手动更新检测</span></span><br><span class="line">    <span class="comment">//this.handleMessages()</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="0x3-破解完成"><a href="#0x3-破解完成" class="headerlink" title="0x3.破解完成"></a>0x3.破解完成</h2><p>现在我们已经获得了破解完成，最后我们在根目录使用<code>asar pack app app.asar</code>将app文件夹打包成asar文件，最后将文件替换进原路径即可。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>破解方式至3.1.1依旧有效，不保证未来不会发生变化，仅供参考。</p>
+<p>曾经我们上课的时候，使用的startUML的颜值，那真的是一言难尽，可能我校用的还是1.0的上古版本（最主要是教材还对的上），太恐怖了，不过现在startUML 3.x的颜值真的很不错，QAQ虽然这也不是我破解的理由。好了好了，我这条咸鱼又滚回去过我的咸鱼生活惹！告辞~</p>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://blog.teble.me/2019/12/02/startuml3.1.1-crack/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://blog.teble.me/2019/12/02/startuml3.1.1-crack/";
+            const title         = "「记录一次startUML破解」";
+            const excerpt       = `前言之前startUML还在3.1.0的时候其实已经破解过一次了，网上的破解教程其实也有很多。讲道理现在startUML的颜值还是很高的。startUML目前的版本都是通过electron打包生成的软件，纯前端开发的东西，并且代码清晰，该有注释有注释，业务逻辑一点混淆都没做，搞得我破解的怪不好意思的。我没有搞事情！但是因为最近StartUML 3.1.1版本发布，发现退出时会强制弹出更新，怪难受的，上次没注意选了是，结果瞬间给我装完了。更加增加了我去除更新的决心。`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/StartUML/" rel="tag">StartUML</a>, <a class="tag-none-link" href="/tags/%E7%A0%B4%E8%A7%A3/" rel="tag">破解</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2022-09-06T02:47:44.508Z" itemprop="dateModified">最后编辑：2022-09-06</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" SpringBoot接收LocalDateTime最佳实践" href="/2019/11/05/springboot-backend-receive-localdatetime/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" spock初探" href="/2021/12/29/spock-spring2-study-note1/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+        <link rel="stylesheet" href="/vendors/gitalk@1.7.2/dist/gitalk.css"></script>
+<div id="gitalk-container" class="post-comments lazy-load" style="padding-left:2rem; padding-right:2rem;"></div>
+<script src="/js/md5.min.js"></script>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            console.log('Gitalk loading...');
+            const gitalk = new Gitalk(Object.assign({
+                id: md5('/2019/12/02/startuml3.1.1-crack/'),
+                path: '/2019/12/02/startuml3.1.1-crack/'
+            }, JSON.parse('{"clientID":"c98a9571b6708589e1f7","clientSecret":"66e214dd4d229c9ed71b2b469423c683f7099410","repo":"teble.github.io","owner":"teble","admin":["teble"],"distractionFreeMode":false}')));
+
+            gitalk.render('gitalk-container');
+        }
+        if (typeof Gitalk === 'undefined') {
+            const src = '/vendors/gitalk@1.7.2/dist/gitalk.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk">comments powered by Gitalk.</a></noscript>
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="https://cdn.jsdelivr.net/gh/teble/teble.github.io@blog-images/img/20211202173817.png" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">一个成天摸鱼只会咕咕咕的混子</p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                5
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                2
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                11
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix toc-div-class" >
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%B4%E8%A7%A3%E6%AD%A5%E9%AA%A4"><span class="toc-text">破解步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x0-%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C"><span class="toc-text">0x0.前置工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x1-%E7%A0%B4%E8%A7%A3license%E6%A0%A1%E9%AA%8C"><span class="toc-text">0x1.破解license校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x2-%E5%8E%BB%E9%99%A4%E5%90%AF%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%A3%80%E6%B5%8B"><span class="toc-text">0x2.去除启动更新检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x3-%E7%A0%B4%E8%A7%A3%E5%AE%8C%E6%88%90"><span class="toc-text">0x3.破解完成</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%B8%E9%B1%BC%E6%97%A5%E5%B8%B8/">摸鱼日常</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a><span class="category-list-count">3</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Java/" style="font-size: 0.6em;">Java</a> <a href="/tags/SpringBoot/" style="font-size: 0.6em;">SpringBoot</a> <a href="/tags/StartUML/" style="font-size: 0.6em;">StartUML</a> <a href="/tags/c/" style="font-size: 0.6em;">c++</a> <a href="/tags/spock/" style="font-size: 0.6em;">spock</a> <a href="/tags/springboot/" style="font-size: 0.6em;">springboot</a> <a href="/tags/zlib/" style="font-size: 0.6em;">zlib</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 0.6em;">后端</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 0.6em;">测试</a> <a href="/tags/%E7%9E%8E%E8%AF%B4/" style="font-size: 0.6em;">瞎说</a> <a href="/tags/%E7%A0%B4%E8%A7%A3/" style="font-size: 0.6em;">破解</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2022/12/15/zlib-stream-uncompress/"><i class="fa  fa-book"></i> 基于Zlib的c++流式解压</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/12/29/spock-spring2-study-note1/"><i class="fa  fa-book"></i> spock初探</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/12/02/startuml3.1.1-crack/"><i class="fa  fa-book"></i> 记录一次startUML破解</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/11/05/springboot-backend-receive-localdatetime/"><i class="fa  fa-book"></i> SpringBoot接收LocalDateTime最佳实践</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2019/10/31/blog-create/"><i class="fa  fa-book"></i> 博客终于搭好了</a>
+            
+          
+        
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/teble"><i class="fa fa-github"></i></a></li>
+                        
+                        <!-- New links -->
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2023 teble's notes 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by teble.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="2580669122"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
